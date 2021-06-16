@@ -1,0 +1,56 @@
+/* GENERAL */
+.container {
+    background: whitesmoke;
+    padding: 20px 20px 0 20px;
+}
+
+.content {
+    margin: 5vh 0 12vh;
+}
+
+.card {
+    margin-bottom: 15px;
+}
+
+.gradient-card {
+    background-color: rgb(201, 222, 150);
+}
+
+.card-title {
+    margin-bottom: 15px;
+}
+
+.text-muted {
+    font-size: large;
+}
+
+.submit {
+    float: right;
+}
+
+a {
+    color: lawngreen;
+}
+
+.navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    margin: 0;
+    z-index: 5;
+}
+
+.footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    flex: 10% 0;
+}
+
+/* INSCRIPTION */
+.form-fields {
+    max-width: 50vh;
+    margin: 10px auto auto;
+}
