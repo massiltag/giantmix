@@ -27,16 +27,13 @@
         <p>Ceci est notre rendu pour le TP8 du module INF3 - BDNoSQL</p>
     </div>
 
-    <div class="page-header">
-        <h1>Connexion <small class="text-muted">à votre compte</small></h1>
-    </div>
 
 
     <div class="card gradient-card">
-        <div class="card-body">
-            <h3 class="card-title">Bienvenue sur GiantMix</h3>
-            <p class="card-text">
-                Connectez-vous ou <u><a href="index.php?ctl=user&action=redirect">inscrivez-vous</a></u> pour acheter.
+        <div class="card-body" style="text-align: center;">
+            <h3 class="card-title" >Bienvenue sur GiantMix</h3>
+            <p class="card-text1" style=" color: gray;">
+                Connectez-vous ou <u><a href="index.php?ctl=user&action=redirect" >inscrivez-vous</a></u> pour acheter.
             </p>
         </div>
     </div>

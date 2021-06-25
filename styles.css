@@ -2,10 +2,13 @@
 
 
 /* https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
+ https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
  */
 
 .container {
-    background-image: url('https://images.pexels.com/photos/5945607/pexels-photo-5945607.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-image: url('https://images.pexels.com/photos/1414651/pexels-photo-1414651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 20px 20px 0 20px;
 }
 
@@ -18,7 +21,7 @@
 }
 
 .gradient-card {
-    background-color: rgb(201, 222, 150);
+    background-color: rgba(255, 255, 255, 0.884);
 }
 
 .card-title {
@@ -31,10 +34,12 @@
 
 .submit {
     float: right;
+    background-color: rgb(252, 0, 126);
+    border-color: rgb(252, 0, 126);
 }
 
 a {
-    color: lawngreen;
+    color: rgb(252, 0, 126);
 }
 
 .navbar {
