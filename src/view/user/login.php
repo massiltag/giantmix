@@ -33,7 +33,7 @@
         <div class="card-body" style="text-align: center;">
             <h3 class="card-title" >Bienvenue sur GiantMix</h3>
             <p class="card-text1" style=" color: gray;">
-                Connectez-vous ou <u><a href="index.php?ctl=user&action=redirect" >inscrivez-vous</a></u> pour acheter.
+                Connectez-vous ou <u><a href="index.php?ctl=user&action=redirect" >inscrivez-vous</a></u> pour passer commande :)
             </p>
         </div>
     </div>
