@@ -1,7 +1,7 @@
 /* GENERAL */
 .container {
     background: whitesmoke;
-    padding: 20px 20px 0 20px;
+    padding: 27px 20px 0 20px;
 }
 
 .content {
@@ -29,7 +29,7 @@
 }
 
 a {
-    color: lawngreen;
+    color: #4fa400;
 }
 
 .navbar {

@@ -27,11 +27,11 @@
             <?php
                 if(isset($_REQUEST["ctl"])){
                     switch ($_REQUEST["ctl"]) {
-                        case 'user':
-                            include 'src/controllers/userCtl.php';
+                        case 'client':
+                            include 'src/controllers/ClientController.php';
                             break;
                         case 'shop':
-                            include 'src/controllers/shopCtl.php';
+                            include 'src/controllers/ShopController.php';
                             break;
                     }
                 } else include 'src/view/user/login.php'

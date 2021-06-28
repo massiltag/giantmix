@@ -31,19 +31,19 @@
                 Formulaire d'inscription
             </h3>
 
-            <form action="index.php" method="post">
+            <form action="index.php?ctl=client&action=register" method="post">
                 <div class="form-fields">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="prenom" placeholder="Prénom" required>
+                        <input type="text" minlength="2" maxlength="10" class="form-control" name="fname" placeholder="Prénom" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="nom" placeholder="Nom" required>
+                        <input type="text" minlength="1" maxlength="12" class="form-control" name="lname" placeholder="Nom" required>
                     </div>
                     <div class="form-group">
                         <input type="email" class="form-control" name="mail" placeholder="E-mail" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" minlength="" class="form-control" name="pwd" placeholder="Mot de passe" required>
+                        <input type="password" minlength="4" class="form-control" name="pwd" placeholder="Mot de passe" required>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary submit">S'inscrire</button>

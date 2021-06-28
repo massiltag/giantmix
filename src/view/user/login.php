@@ -36,7 +36,7 @@
         <div class="card-body">
             <h3 class="card-title">Bienvenue sur GiantMix</h3>
             <p class="card-text">
-                Connectez-vous ou <u><a href="index.php?ctl=user&action=redirect">inscrivez-vous</a></u> pour acheter.
+                Connectez-vous ou <u><a href="index.php?ctl=client&action=redirect">inscrivez-vous</a></u> pour acheter.
             </p>
         </div>
     </div>
@@ -47,7 +47,7 @@
                 Connexion
             </h3>
 
-            <form action="index.php" method="post" class="needs-validation" novalidate>
+            <form action="index.php?ctl=client&action=login" method="post" class="needs-validation" novalidate>
                 <div class="form-group">
                     <label>Adresse e-mail</label>
                     <input type="email" class="form-control" name="mail" placeholder="E-mail" required>
