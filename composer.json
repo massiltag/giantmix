@@ -1,0 +1,30 @@
+{
+  "type": "project",
+  "authors": [
+    {
+      "name": "Nicolas LEWIN",
+      "email": "ncalwn@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Massil TAGUEMOUT",
+      "email": "massiltag@icloud.com",
+      "role": "Developer"
+    },
+    {
+      "name": "William DAI",
+      "email": "williamdai19@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Sarah MEZIANE",
+      "email": "sarahmez1999@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "predis/predis": "^1.1.1",
+    "mongodb/mongodb": "^1.8",
+    "elasticsearch/elasticsearch": "^7.13"
+  }
+}
