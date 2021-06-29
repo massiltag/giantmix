@@ -46,14 +46,14 @@ class ClientRepository {
 
     }
 
-    function login(string $mail, string $password): string {
-        $user = $this->mongo
+    function login(string $mail, string $password): Client {
+        $record = $this->mongo
             ->selectDatabase($this->db)
             ->selectCollection($this->collection)
             ->findOne(array("mail" => $mail, "pwd" => $password));
-        if ($user != null) {
-            return (string) $user['_id'];
-        } else return "NONE";
+        if ($record != null) {
+            return new Client($record["fname"], $record["lname"], $record["mail"], $record["pwd"]);
+        } else return new Client("", "", "", "");
     }
 
 

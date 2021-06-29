@@ -1,3 +1,12 @@
+<?php
+    if (session_status() !== PHP_SESSION_ACTIVE)
+        session_start();
+
+    if (isset($_POST["disconnect"]) || !isset($_SESSION["fname"])) {
+        unset($_POST["disconnect"]);
+        session_destroy();
+    }
+?>
 <html lang="en">
 
     <head>
@@ -19,7 +28,7 @@
     <body class="container">
 
         <?php
-            include 'src/view/static/navbar.php'
+        include 'src/view/_static/navbar.php'
         ?>
 
 
@@ -34,12 +43,19 @@
                             include 'src/controllers/ShopController.php';
                             break;
                     }
-                } else include 'src/view/user/login.php'
+                } else {
+                    if (session_status() === PHP_SESSION_ACTIVE) {
+                        echo "<h3>Bienvenue, " . $_SESSION["fname"] . "</h3>";
+                        include 'src/view/shop/shop.php';
+                    } else {
+                        include 'src/view/user/login.php';
+                    }
+                }
             ?>
         </div>
 
         <?php
-            include 'src/view/static/footer.php'
+        include 'src/view/_static/footer.php'
         ?>
 
     </body>
