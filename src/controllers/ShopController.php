@@ -3,8 +3,8 @@
 
 if (isset($_REQUEST["action"])) {
     switch ($_REQUEST["action"]) {
-        case 'redirect':
-            include 'src/view/shop.php';
+        case 'bucket':
+            include 'src/view/shop/bucket.php';
             break;
     }
 
