@@ -45,7 +45,6 @@
                     }
                 } else {
                     if (session_status() === PHP_SESSION_ACTIVE) {
-                        echo "<h3>Bienvenue, " . $_SESSION["fname"] . "</h3>";
                         include 'src/view/shop/shop.php';
                     } else {
                         include 'src/view/user/login.php';

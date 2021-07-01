@@ -34,50 +34,85 @@
             .py-5 {
                 padding: 1rem 0 1rem!important;
             }
+
+            .form-row .col-md-3 {
+                margin-top: 10px;
+            }
+
+            .card-header {
+                background-color: rgb(116, 112, 239);
+                color: whitesmoke;
+            }
         </style>
 
-        <script>
-            function multiplyNode(node, count, deep) {
-                for (var i = 0, copy; i < count - 1; i++) {
-                    copy = node.cloneNode(deep);
-                    node.parentNode.insertBefore(copy, node);
-                }
-            }
-        </script>
     </head>
 
-    <body class="container" onload="multiplyNode(document.getElementsByClassName('col-md-4')[0], 7, true);">
+    <body class="container">
 
-        <ul class="nav nav-tabs">
-            <li class="nav-item" onclick="setActive('elt1')">
-                <a class="nav-link active" id="elt1" href="#">Fruits</a>
-            </li>
-            <li class="nav-item" onclick="setActive('elt2')">
-                <a class="nav-link" id="elt2" href="#">Légumes</a>
-            </li>
-            <li class="nav-item" onclick="setActive('elt3')">
-                <a class="nav-link" id="elt3" href="#">Céréales</a>
-            </li>
-<!--            <li class="nav-item"onclick="setActive('elt4')">-->
-<!--                <a class="nav-link disabled" id="elt4" href="#" tabindex="-1" aria-disabled="true">Trucs pas bons</a>-->
-<!--            </li>-->
-        </ul>
+        <?php echo "<h3>Bienvenue, " . $_SESSION["fname"] . "</h3>"; ?>
+        <p class="text-muted">Lancez une recherche.</p>
 
-        <div class="py-5">
-            <div class="row hidden-md-up">
-                <div class="col-md-4"> <!-- A RÉPLIQUER -->
-                    <div class="card">
-                        <img class="card-img-top" src="assets/logo.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title product-name">Produit</h5>
-                            <small class="text-muted price">5 $</small>
-                            <p class="card-text product-description">Petite description du produit, c'est très bon et pas du tout cher, achetez le. Merci bien.</p>
-                            <a href="#" class="btn btn-primary submit">Ajouter au panier</a>
+        <div class="card">
+            <h5 class="card-header">Recherche multi-critères</h5>
+            <div class="card-body">
+                <form action="index.php" method="get">
+
+                    <input type="hidden" name="ctl" value="shop">
+                    <input type="hidden" name="action" value="search">
+                    <input type="hidden" name="type" value="multi">
+
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="fname">Nom</label>
+                            <input type="text" id="fname" name="nom" class="form-control" placeholder="Nom de la console">
+                        </div>
+                        <div class="col">
+                            <label for="ffabricant">Fabricant</label>
+                            <input type="text" id="ffabricant" name="fabricant" class="form-control" placeholder="Nom du fabricant">
                         </div>
                     </div>
-                </div>
+
+                    <div class="form-row">
+                        <div class="col-md-3">
+                            <label for="fprixmin">P. min.</label>
+                            <input type="number" id="fprixmin" name="prixmin" class="form-control" placeholder="Prix minimum">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="fprixmax">P. max.</label>
+                            <input type="number" id="fprixmax" name="prixmax" class="form-control" placeholder="Prix maximum">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="fcat">Catégorie</label>
+                            <select id="fcat" name="categorie" class="form-control">
+                                <option selected></option>
+                                <option>Moderne</option>
+                                <option>Rétro</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="fetat">État</label>
+                            <select id="fetat" name="etat" class="form-control">
+                                <option selected></option>
+                                <option>Neuf</option>
+                                <option>Reconditionné</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button style="margin-top: 20px" type="submit" class="btn submit btn-outline-success">Rechercher</button>
+                </form>
             </div>
+            <small class="text-muted price" style="top: 17px">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+            </small>
         </div>
+
+        <?php
+            if (isset($_GET["keyword"]))
+                echo '<p>Voici le résultat de votre recherche pour le mot clé "' . $_GET["keyword"] . '".</p>';
+        ?>
 
     </body>
 
