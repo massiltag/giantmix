@@ -24,7 +24,7 @@ class ProductRepository {
         return $products;
     }
 
-    function findProductById($id): Product {
+    function findProductById($id): Product { // POUR REDIS
         $params = [
             'index' => 'giantmix',
             'id' => $id
@@ -55,8 +55,8 @@ class ProductRepository {
     }
 
 
-    function findProductsByMultipleCriterias($nom, $fabricant, $prix, $categorie, $etat): array {
-        $match = $this->toFilterArray($nom, $fabricant, $prix, $categorie, $etat);
+    function findProductsByMultipleCriterias($nom, $fabricant, $prixmin, $prixmax, $categorie, $etat): array {
+        $match = $this->toFilterArray($nom, $fabricant, $prixmin, $prixmax, $categorie, $etat);
 
         $params = [
             'index' => 'giantmix',
@@ -90,19 +90,33 @@ class ProductRepository {
         );
     }
 
-    private function toFilterArray($nom, $fabricant, $prix, $categorie, $etat): array {
+    private function toFilterArray($nom, $fabricant, $prixmin, $prixmax, $categorie, $etat): array {
         $match = array();
 
         if ($nom != "")
             array_push($match, ['match' => ['nom' => $nom] ]);
         if ($fabricant != "")
             array_push($match, ['match' => ['fabricant' => $fabricant] ]);
-        if ($prix != "")
-            array_push($match, ['match' => ['prix' => $prix] ]);
         if ($categorie != "")
             array_push($match, ['match' => ['categorie' => $categorie] ]);
         if ($etat != "")
             array_push($match, ['match' => ['etat' => $etat] ]);
+        if ($prixmin != 0)
+            array_push($match, [
+                'range' => [
+                    'prix' => [
+                        'gte' => $prixmin
+                    ]
+                ]
+            ]);
+        if ($prixmax != 9999)
+            array_push($match, [
+                'range' => [
+                    'prix' => [
+                        'lte' => $prixmax
+                    ]
+                ]
+            ]);
 
         return $match;
     }

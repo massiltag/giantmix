@@ -99,7 +99,7 @@
                         </div>
                     </div>
 
-                    <button style="margin-top: 20px" type="submit" class="btn submit btn-outline-success">Rechercher</button>
+                    <button style="margin-top: 20px" type="submit" class="btn submit btn-outline-primary">Rechercher</button>
                 </form>
             </div>
             <small class="text-muted price" style="top: 17px">
@@ -111,7 +111,7 @@
 
         <?php
             if (isset($_GET["keyword"]))
-                echo '<p>Voici le résultat de votre recherche pour le mot clé "' . $_GET["keyword"] . '".</p>';
+                echo '<p>Voici le résultat de votre recherche pour le mot clé "<b>' . $_GET["keyword"] . '</b>".</p>';
         ?>
 
     </body>

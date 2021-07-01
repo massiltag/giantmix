@@ -15,16 +15,20 @@ if (isset($_REQUEST["action"])) {
                 '<div class="py-5">
                     <div class="row hidden-md-up">';
 
-            $nom = isset($_GET["nom"]) ? $_GET["nom"] : "";
-            $fabricant = isset($_GET["fabricant"]) ? $_GET["fabricant"] : "";
-            $prix = isset($_GET["prix"]) ? $_GET["prix"] : "";
-            $categorie = isset($_GET["categorie"]) ? $_GET["categorie"] : "";
-            $etat = isset($_GET["etat"]) ? $_GET["etat"] : "";
+            $nom = $_GET["nom"];
+            $fabricant = $_GET["fabricant"];
+            $prixmin = $_GET["prixmin"] != "" ? (int) $_GET["prixmin"] : 0;
+            $prixmax = $_GET["prixmax"] != "" ? (int) $_GET["prixmax"] : 9999;
+            $categorie = $_GET["categorie"];
+            $etat = $_GET["etat"];
 
-
-            $array = ($_GET["type"] == "keyword") ?
-                $productDB->findProductsByKeyword($_GET["keyword"]) :
-                $productDB->findProductsByMultipleCriterias($nom, $fabricant, $prix, $categorie, $etat);
+            if ($nom=="" && $fabricant=="" && $prixmin==0 && $prixmax>=9999 && $categorie=="" && $etat=="") {
+                $array = $productDB->findAll();
+            }
+            else
+                $array = ($_GET["type"] == "keyword") ?
+                    $productDB->findProductsByKeyword($_GET["keyword"]) :
+                    $productDB->findProductsByMultipleCriterias($nom, $fabricant, $prixmin, $prixmax, $categorie, $etat);
 
             foreach ($array as $entry) {
                 echo '
@@ -51,7 +55,9 @@ if (isset($_REQUEST["action"])) {
             echo
                 '   </div>
                 </div>';
+            unset($_GET);
             break;
+
     }
 
 }
