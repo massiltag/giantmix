@@ -35,6 +35,7 @@ if (isset($_REQUEST["action"])) {
                 $_SESSION["fname"] = $result->getFname();
                 $_SESSION["lname"] = $result->getLname();
                 clearRequest();
+
                 include "index.php";
                 // echo "<h3>Bienvenue</h3><h6>Youpi vous êtes connectés, faut faire une session maintenant.</h6>";
             }

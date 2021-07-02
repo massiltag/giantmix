@@ -45,7 +45,7 @@ if (isset($_REQUEST["action"])) {
                                             <li>État : '. $entry->getEtat() . '</li>' .
                                     '   </ul>
                                      </p>
-                                    <a href="#" class="btn btn-primary submit">Ajouter au panier</a>
+                                    <a href="index.php?ctl=bucket&action=add&product='.$entry->getNom(). '" class="btn btn-primary submit">Ajouter au panier</a>
                                 </div>
                             </div>
                         </div>
@@ -57,6 +57,8 @@ if (isset($_REQUEST["action"])) {
                 </div>';
             unset($_GET);
             break;
+
+
 
     }
 

@@ -6,6 +6,24 @@
         unset($_POST["disconnect"]);
         session_destroy();
     }
+
+    require "vendor/predis/predis/autoload.php";
+    Predis\Autoloader::register();
+
+    try {
+        $redis = new Predis\Client(array(
+            "scheme" => "tcp",
+            "host" => "127.0.0.1",//changer le nom de la base
+            "port" => 6379,
+        ));
+    }
+    catch (Exception $e) {
+        die($e->getMessage());
+    }
+
+    //$redis->del('panier');
+
+
 ?>
 <html lang="en">
 
@@ -41,6 +59,9 @@
                             break;
                         case 'shop':
                             include 'src/controllers/ShopController.php';
+                            break;
+                        case 'bucket':
+                            include 'src/controllers/BucketController.php';
                             break;
                     }
                 } else {
