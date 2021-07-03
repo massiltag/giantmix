@@ -34,16 +34,19 @@ if (isset($_REQUEST["action"])) {
                 session_start();
                 $_SESSION["fname"] = $result->getFname();
                 $_SESSION["lname"] = $result->getLname();
+                $_SESSION["mail"] = $result->getMail();
                 clearRequest();
 
                 include "index.php";
-                // echo "<h3>Bienvenue</h3><h6>Youpi vous êtes connectés, faut faire une session maintenant.</h6>";
             }
             break;
 
         case 'logoff':
             $_POST["disconnect"] = "true";
             clearRequest();
+            if($redis->exists("panier") == 1){
+                $redis->del("panier");
+            }
             include "index.php";
             break;
     }

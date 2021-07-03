@@ -21,8 +21,6 @@
         die($e->getMessage());
     }
 
-    //$redis->del('panier');
-
 
 ?>
 <html lang="en">
@@ -62,6 +60,9 @@
                             break;
                         case 'bucket':
                             include 'src/controllers/BucketController.php';
+                            break;
+                        case 'order':
+                            include 'src/controllers/OrderController.php';
                             break;
                     }
                 } else {

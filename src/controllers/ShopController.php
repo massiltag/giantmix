@@ -9,6 +9,10 @@ if (isset($_REQUEST["action"])) {
             include 'src/view/shop/bucket.php';
             break;
 
+        case 'orders':
+            include 'src/view/shop/orders.php';
+            break;
+
         case 'search':
             include 'src/view/shop/shop.php';
             echo
