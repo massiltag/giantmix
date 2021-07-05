@@ -55,7 +55,7 @@ Afin de lancer le projet, vous aurez besoin d'installer
 
 ## Lancer le projet
 
-1. Installer les dépendances avec ```composer install``` dans le répertoire du projet
+1. Installer les dépendances avec ```composer update``` puis ```composer install``` dans le répertoire du projet
 2. Lancer un serveur PHP sur un port libre de votre machine : ```php -S localhost:4242```
 3. Ouvrir un navigateur à l'adresse et au port spécifié
 4. Vous inscrire depuis l'interface et vous connecter
