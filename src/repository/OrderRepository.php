@@ -27,7 +27,7 @@ class OrderRepository
     }
 
 
-    function confirm(Order $client): string {
+    function save(Order $client): string {
         $result = $this->mongo->selectDatabase($this->db)->selectCollection($this->collection)->insertOne(array(
             "fname" => $client->getFname(),
             "lname" => $client->getLname(),
@@ -35,6 +35,7 @@ class OrderRepository
             "date" => $client->getDate(),
             "itemList" => $client->getItemList()
         ));
+        var_dump($result);
         return $result->getInsertedId();
 
     }

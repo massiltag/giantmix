@@ -7,21 +7,6 @@
         session_destroy();
     }
 
-    require "vendor/predis/predis/autoload.php";
-    Predis\Autoloader::register();
-
-    try {
-        $redis = new Predis\Client(array(
-            "scheme" => "tcp",
-            "host" => "127.0.0.1",//changer le nom de la base
-            "port" => 6379,
-        ));
-    }
-    catch (Exception $e) {
-        die($e->getMessage());
-    }
-
-
 ?>
 <html lang="en">
 
@@ -44,7 +29,7 @@
     <body class="container">
 
         <?php
-        include 'src/view/_static/navbar.php'
+            include 'src/view/_static/navbar.php'
         ?>
 
 

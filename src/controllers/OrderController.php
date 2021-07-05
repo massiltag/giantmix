@@ -5,20 +5,21 @@ require_once("src/model/Order.php");
 
 if (isset($_REQUEST["action"])) {
     require_once "src/repository/OrderRepository.php";
+    require_once "src/repository/CartRepository.php";
     $orderDB = new OrderRepository();
+    $cartDB = new CartRepository();
 
     switch ($_REQUEST["action"]) {
-        case 'confirm':
-            $id = $orderDB->confirm(new Order(
+        case 'save':
+            $id = $orderDB->save(new Order(
                 $_SESSION["fname"],
                 $_SESSION["lname"],
                 $_SESSION["mail"],
                 date("Y-m-d H:i:s"),
-                $redis->hgetall("panier")
-
+                $cartDB->hgetall("panier")
             ));
-            $redis->del("panier");
-            include 'src/view/shop/bucket.php';
+            $cartDB->del("panier");
+            include 'src/view/shop/cart.php';
             break;
 
         case 'listOrders':

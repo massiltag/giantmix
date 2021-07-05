@@ -87,14 +87,17 @@
                 <div class="col-md-12"> <!-- A RÉPLIQUER -->
                     <?php
 
-                    $keys = $redis->hkeys('panier');
+                    require_once "src/repository/CartRepository.php";
+                    $cartDB = new CartRepository();
+
+                    $keys = $cartDB->hkeys('panier');
                     foreach($keys as $key) {
                         echo '<div class="card entry">
                         <img class="card-img-right" src="assets/logo.png" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title product-name">'. $key .'</h5>
-                            <small class="text-muted quantity">'. $redis->hGet('panier', $key) .'</small>
-                            <p class="card-text product-description">Petite description du produit, c\'est très bon et pas du tout cher, achetez le. Merci bien.</p>
+                            <small class="text-muted quantity">'. $cartDB->hGet('panier', $key) .'</small>
+                            <p class="card-text product-description">Description du produit.</p>
                             
                             
                             <a href="index.php?ctl=bucket&action=increment&product='. $key .'" class="btn btn-success cart-btn">
@@ -129,15 +132,15 @@
 
 
         <div class="card bucket">
-            <h5 class="card-header">Total de vos achats</h5>
+            <h5 class="card-header">Valider vos achats</h5>
             <div class="card-body">
                 <?php
-                if($redis->exists("panier") == 1){
-                    echo '<a href="index.php?ctl=order&action=confirm" class="btn submit btn-outline-success">Passer la commmande</a>';
-                }
-                else {
-                    echo 'Votre panier est vide.';
-                }
+                    if($cartDB->exists("panier") == 1){
+                        echo '<a href="index.php?ctl=order&action=save" class="btn submit btn-outline-success">Passer la commmande</a>';
+                    }
+                    else {
+                        echo 'Votre panier est vide.';
+                    }
                 ?>
             </div>
             <small class="text-muted quantity" style="top: 10px">0 €</small>

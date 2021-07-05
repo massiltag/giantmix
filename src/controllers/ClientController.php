@@ -2,7 +2,9 @@
 
 if (isset($_REQUEST["action"])) {
     require_once "src/repository/ClientRepository.php";
+    require_once "src/repository/CartRepository.php";
     $clientDB = new ClientRepository();
+    $cartDB = new CartRepository();
 
 
     switch ($_REQUEST["action"]) {
@@ -44,8 +46,8 @@ if (isset($_REQUEST["action"])) {
         case 'logoff':
             $_POST["disconnect"] = "true";
             clearRequest();
-            if($redis->exists("panier") == 1){
-                $redis->del("panier");
+            if($cartDB->exists("panier") == 1){
+                $cartDB->del("panier");
             }
             include "index.php";
             break;

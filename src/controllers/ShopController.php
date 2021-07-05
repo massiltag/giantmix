@@ -6,7 +6,7 @@ $productDB = new ProductRepository();
 if (isset($_REQUEST["action"])) {
     switch ($_REQUEST["action"]) {
         case 'bucket':
-            include 'src/view/shop/bucket.php';
+            include 'src/view/shop/cart.php';
             break;
 
         case 'orders':
