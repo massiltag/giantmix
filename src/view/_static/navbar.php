@@ -28,7 +28,7 @@
                               </li>';
 
                         echo '<li class="nav-item">
-                                <a class="nav-link" href="index.php?ctl=shop&action=orders">Mes commandes<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="index.php?ctl=order&action=list">Mes commandes<span class="sr-only">(current)</span></a>
                                </li>';
                     }
                 ?>

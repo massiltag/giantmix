@@ -14,12 +14,15 @@ class Order {
 
     private array $itemList;
 
-    public function __construct(string $fname, string $lname, string $mail, string $date, array $itemList) {
+    private float $total;
+
+    public function __construct(string $fname, string $lname, string $mail, string $date, array $itemList, float $total) {
         $this->fname = $fname;
         $this->lname = $lname;
         $this->mail = $mail;
         $this->date = $date;
         $this->itemList = $itemList;
+        $this->total = $total;
     }
 
     /**
@@ -107,5 +110,23 @@ class Order {
     public function setItemList(array $itemList): void {
         $this->itemList = $itemList;
     }
+
+    /**
+     * @return float
+     */
+    public function getTotal(): float
+    {
+        return $this->total;
+    }
+
+    /**
+     * @param float $total
+     */
+    public function setTotal(float $total): void
+    {
+        $this->total = $total;
+    }
+
+
 
 }

@@ -49,13 +49,7 @@
 
 <body class="container">
 
-<?php echo "<h3>Bienvenue, " . $_SESSION["fname"] . "</h3>"; ?>
-
-<h1>HELLLLLOOOO</h1>
-
-<a href="index.php?ctl=order&action=listOrders" class="btn btn-primary submit">Afficher les commandes passées</a>
-
-
+    <?php echo "<h3>Commandes de " . $_SESSION["fname"] . "</h3>"; ?>
 
 
 </body>

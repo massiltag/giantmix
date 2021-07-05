@@ -143,7 +143,7 @@
             echo '    <div class="card cart">
                         <h5 class="card-header">Valider vos achats</h5>
                         <div class="card-body">';
-            echo '      <a href="index.php?ctl=order&action=save" class="btn submit btn-outline-success">Passer la commmande</a>';
+            echo '      <a href="index.php?ctl=order&action=save&total=' . $prixTotal . '" class="btn submit btn-outline-success">Passer la commmande</a>';
             echo '    </div>
                       <small class="text-muted quantity" style="top: 10px">' . $prixTotal . '</small>
                       </div>';

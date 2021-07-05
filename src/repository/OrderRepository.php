@@ -27,28 +27,28 @@ class OrderRepository
     }
 
 
-    function save(Order $client): string {
+    function save(Order $order): string {
         $result = $this->mongo->selectDatabase($this->db)->selectCollection($this->collection)->insertOne(array(
-            "fname" => $client->getFname(),
-            "lname" => $client->getLname(),
-            "mail" => $client->getMail(),
-            "date" => $client->getDate(),
-            "itemList" => $client->getItemList()
+            "fname" => $order->getFname(),
+            "lname" => $order->getLname(),
+            "mail" => $order->getMail(),
+            "date" => $order->getDate(),
+            "itemList" => $order->getItemList(),
+            "total" => $order->getTotal()
         ));
-        var_dump($result);
         return $result->getInsertedId();
 
     }
 
-    function listOrders(string $mail, string $fname, string $lname): array {
+    function listOrders(string $mail): array {
         $result = $this->mongo
             ->selectDatabase($this->db)
             ->selectCollection($this->collection)
-            ->find(['mail' => $mail, 'fname' => $fname, 'lname' => $lname]);
+            ->find(['mail' => $mail]);
 
         $orders = array();
         foreach ($result as $entry) {
-            $order = new Order($entry["fname"], $entry["lname"], $entry["mail"], $entry["date"], (array) $entry["itemList"]);
+            $order = new Order($entry["fname"], $entry["lname"], $entry["mail"], $entry["date"], (array) $entry["itemList"], $entry["total"]);
             //$order.setId($entry['_id']);
             array_push($orders, $order);
         }
