@@ -24,7 +24,7 @@
                 <?php
                     if (session_status() === PHP_SESSION_ACTIVE) {
                         echo '<li class="nav-item">
-                                <a class="nav-link" href="index.php?ctl=shop&action=bucket">Panier<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="index.php?ctl=shop&action=cart">Panier<span class="sr-only">(current)</span></a>
                               </li>';
 
                         echo '<li class="nav-item">

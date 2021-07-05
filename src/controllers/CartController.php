@@ -1,22 +1,20 @@
 <?php
 
+require_once "src/repository/CartRepository.php";
+$cartDB = new CartRepository();
 require_once "src/repository/ProductRepository.php";
 $productDB = new ProductRepository();
 
 if (isset($_REQUEST["action"])) {
     switch ($_REQUEST["action"]) {
-        case 'cart':
-            include 'src/view/shop/cart.php';
-            break;
+        case 'add':
+            $produit = $_REQUEST["product"];
 
-        case 'orders':
-            include 'src/view/shop/orders.php';
-            break;
+            $cartDB->addProduct($produit);
 
-        case 'search':
             include 'src/view/shop/shop.php';
             echo
-                '<div class="py-5">
+            '<div class="py-5">
                     <div class="row hidden-md-up">';
 
             $nom = $_GET["nom"];
@@ -47,7 +45,7 @@ if (isset($_REQUEST["action"])) {
                                             <li>Catégorie : '. $entry->getCategorie() . '</li>
                                             <li>Fabricant : '. $entry->getFabricant() . '</li>
                                             <li>État : '. $entry->getEtat() . '</li>' .
-                                    '   </ul>
+                    '   </ul>
                                      </p>
                                     <a href="index.php?ctl=cart&action=add&product=' . $entry->getId() . '&nom=' . $nom . '&fabricant=' . $fabricant . '&prixmin=' . $prixmin . '&prixmax=' . $prixmax . '&categorie=' . $categorie . '&etat=' . $etat . '&reloadSearch=' . $entry->getNom() . '" class="btn btn-primary submit">Ajouter au panier</a>
                                 </div>
@@ -57,13 +55,34 @@ if (isset($_REQUEST["action"])) {
             }
 
             echo
-                '   </div>
+            '   </div>
                 </div>';
             unset($_GET);
             break;
 
+        case 'increment':
+            $produit = $_REQUEST["product"];
+            $cartDB->increment($produit);
+            include 'src/view/shop/cart.php';
+            break;
 
+
+        case 'decrement':
+            $produit = $_REQUEST["product"];
+            $cartDB->decrement($produit);
+            include 'src/view/shop/cart.php';
+            break;
+
+
+        case 'delete':
+            $produit = $_REQUEST["product"];
+            $cartDB->delete($produit);
+            include 'src/view/shop/cart.php';
+            break;
 
     }
-
 }
+
+
+
+?>

@@ -62,6 +62,10 @@ class CartRepository {
         }
     }
 
+    public function getQty($produit) {
+        return $this->redis->hget("panier", $produit);
+    }
+
     public function hkeys($param) {
         return $this->redis->hkeys('panier');
     }

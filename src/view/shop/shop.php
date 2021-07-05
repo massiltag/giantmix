@@ -114,6 +114,11 @@
                 echo '<p>Voici le résultat de votre recherche pour le mot clé "<b>' . $_GET["keyword"] . '</b>".</p>';
         ?>
 
+        <?php
+            if (isset($_GET["reloadSearch"]))
+                echo '<p>Votre produit <b>' . $_GET["reloadSearch"] . '</b> a été ajouté au panier.</p>';
+        ?>
+
     </body>
 
 </html>

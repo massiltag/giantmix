@@ -43,8 +43,8 @@
                         case 'shop':
                             include 'src/controllers/ShopController.php';
                             break;
-                        case 'bucket':
-                            include 'src/controllers/BucketController.php';
+                        case 'cart':
+                            include 'src/controllers/CartController.php';
                             break;
                         case 'order':
                             include 'src/controllers/OrderController.php';
