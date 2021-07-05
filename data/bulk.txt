@@ -1,0 +1,28 @@
+{"index":{}}
+{ "nom": "PlayStation 5", "fabricant": "SONY", "prix": 499.99, "categorie": "Moderne", "etat": "Neuf" }
+{"index":{}}
+{ "nom": "PlayStation 5 (Digital)", "fabricant": "SONY", "prix": 399.99, "categorie": "Moderne", "etat": "Neuf" }
+{"index":{}}
+{ "nom":"Xbox Series X","fabricant":"MICROSOFT","prix": 499.99,"categorie":"Moderne","etat":"Neuf" }
+{"index":{}}
+{ "nom": "Nintendo Switch",	"fabricant": "NINTENDO", "prix": 299.99, "categorie": "Moderne", "etat": "Neuf" }
+{"index":{}}
+{ "nom": "Nintendo Switch Lite", "fabricant": "NINTENDO", "prix": 199.99, "categorie": "Moderne", "etat": "Neuf" }
+{"index":{}}
+{ "nom": "PlayStation 4 Pro", "fabricant": "SONY", "prix": 299.99, "categorie": "Moderne", "etat": "Neuf" }
+{"index":{}}
+{ "nom": "PlayStation 4 Slim", "fabricant": "SONY", "prix": 199.99, "categorie": "Moderne", "etat": "Neuf" }
+{"index":{}}
+{ "nom": "Xbox One S", "fabricant": "MICROSOFT", "prix": 299.99, "categorie": "Moderne", "etat": "Neuf" }
+{"index":{}}
+{ "nom": "Nintendo 3DS XL", "fabricant": "NINTENDO", "prix": 149.99, "categorie": "Moderne", "etat": "Neuf" }
+{"index":{}}
+{ "nom": "Nintendo DS", "fabricant": "NINTENDO", "prix": 49.99, "categorie": "Rétro", "etat": "Reconditionné" }
+{"index":{}}
+{ "nom": "Super Nintendo", "fabricant": "NINTENDO", "prix": 89.99, "categorie": "Rétro", "etat": "Reconditionné" }
+{"index":{}}
+{ "nom": "Nintendo Game Boy", "fabricant": "NINTENDO", "prix": 89.99, "categorie": "Rétro", "etat": "Reconditionné" }
+{"index":{}}
+{ "nom": "Nintendo 64", "fabricant": "NINTENDO", "prix": 119.99, "categorie": "Rétro", "etat": "Reconditionné" }
+{"index":{}}
+{ "nom": "PlaySation", "fabricant": "SONY", "prix": 119.99, "categorie": "Rétro", "etat": "Reconditionné" }
