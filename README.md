@@ -16,7 +16,7 @@ Les fonctionnalités comprennent :
 
 ### [MongoDB](https://docs.mongodb.com/manual/administration/install-community/)
 
-Stockage des utilisateurs et de l'historique des commandes
+Stockage des utilisateurs et de l'historique des commandes.
 
 ### [ElasticSearch](https://www.elastic.co/fr/downloads/elasticsearch)
 
@@ -25,7 +25,9 @@ multicritères sur ces derniers.
 
 ### [Redis](https://redis.io/download)
 
-Stockage temporaire du panier utilisateur pendant 5 minutes
+Stockage temporaire du panier utilisateur pendant 5 minutes. Les IDs des produits sont 
+stockés dans Redis puis une requête est effectuée vers MongoDB au chargement du panier 
+pour afficher les détails des produits.
 
 
 
