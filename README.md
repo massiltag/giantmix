@@ -39,7 +39,7 @@ Suivre ces instructions pour lancer le projet convenablement.
 
 Afin de lancer le projet, vous aurez besoin d'installer
 
-* [PHP](https://www.php.net/downloads.php) version 7.4 (ou WAMP/LAMP/MAMP/XAMPP)
+* [PHP](https://www.php.net/downloads.php) version 7.4
 * [Extension MongoDB](https://docs.mongodb.com/drivers/php/) pour PHP
 * [Composer](https://getcomposer.org/download/)
 * [MongoDB](https://docs.mongodb.com/manual/administration/install-community/) lancé sur le port par défaut (localhost:**27017**)
