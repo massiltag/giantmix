@@ -53,7 +53,7 @@ Afin de lancer le projet, vous aurez besoin d'installer
   de cette manière :  
   ```POST http://localhost:9200/giantmix/products/_bulk```  
   Avec comme body : le fichier ```./data/bulk.txt``` présent dans le répertoire
-  du dossier.
+  du projet.
 
 ## Lancer le projet
 
